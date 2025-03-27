@@ -12,13 +12,13 @@ CREATE TABLE Villager (
 
 CREATE TABLE VillagerSpecies (
     vs_id INT NOT NULL AUTO_INCREMENT,
-    vs_spec VARCHAR 15, -- Max observed 9
+    vs_spec VARCHAR(15), -- Max observed 9
     PRIMARY KEY (vs_id)
 );
 
-CREATE TABLE VillagerSpecies (
+CREATE TABLE VillagerPersonality (
     vp_id INT NOT NULL AUTO_INCREMENT,
-    vp_type VARCHAR 15, -- Max observed TODO
+    vp_type VARCHAR(15), -- Max observed TODO
     PRIMARY KEY (vp_id)
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE HousePayment (
     hp_id INT NOT NULL AUTO_INCREMENT,
     h_id INT NOT NULL,
     v_id INT NOT NULL,
-    hp_amount INT FLOAT,
+    hp_amount FLOAT,
     PRIMARY KEY (hp_id),
     FOREIGN KEY (h_id) REFERENCE House(h_id)
 );
@@ -79,7 +79,7 @@ CREATE TABLE BusinessSales (
     FOREIGN KEY (b_id) REFERENCE Business(b_id),
 );
 
-CREATE TABLE BusinessSales (
+CREATE TABLE BusinessInfrastructure (
     b_id INT NOT NULL AUTO_INCREMENT,
     i_id INT NOT NULL,
     PRIMARY KEY (b_id),
