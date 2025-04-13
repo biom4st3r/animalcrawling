@@ -4,7 +4,7 @@ import random
 DB = c.connect(
   host="localhost",
   user="root",
-  password="D@nnynguyen0389",
+  password="notMyPassword",
   database='animal_crossing_team'
 )
 
