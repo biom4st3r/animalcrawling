@@ -5,12 +5,13 @@ from addHouses import *
 DB = c.connect(
   host="localhost",
   user="root",
-  password="notMyPassword",
+  password="password",
   database='animal_crossing_team'
 )
 
 # initialize SQL cursor to do statements on
 cur = DB.cursor()
+
 
 numVillagers = getNumVillagers(cur)
 print(f"Number of villagers in the database: {numVillagers}")
@@ -18,3 +19,5 @@ print(f"Number of villagers in the database: {numVillagers}")
 numHouses = inputRandomHouses(numVillagers)
 
 inputRandomHousePayments(numVillagers, numHouses)
+
+copyHouseIDtoVIllagers(numVillagers)

@@ -4,7 +4,7 @@ import random
 DB = c.connect(
   host="localhost",
   user="root",
-  password="notMyPassword",
+  password="password",
   database='animal_crossing_team'
 )
 
@@ -132,4 +132,21 @@ def assignVillagerToHouse(numVillagers, numHouses):
 
         print("Villager #" + str(villager_id) + " for House #" + str(house_id) + " added to the database!")
 
+'''
+Function that copies the house id from the housepayment table to the villager table.
+'''
+def copyHouseIDtoVIllagers(numVillagers):
+    for i in range(numVillagers):
+
+        # read the housepayment table to get the house id for the villager
+        cur.execute("SELECT h_id FROM HOUSEPAYMENT WHERE v_id = %s", (i + 1,))
+
+        curHouseID = cur.fetchone()[0]
+
+        # then, update the villager table with the house id
+        cur.execute("UPDATE VILLAGER SET h_id = %s WHERE v_id = %s", (curHouseID, i + 1))
+
+        print("Villager #" + str(i + 1) + " updated with House ID #" + str(curHouseID) + "!")
+        # then, commit the changes to the database
+        DB.commit()
 
