@@ -5,7 +5,7 @@ from addInfrastructure import *
 DB = c.connect(
   host="localhost",
   user="root",
-  password="D@nnynguyen0389",
+  password="password",
   database='animal_crossing_team'
 )
 

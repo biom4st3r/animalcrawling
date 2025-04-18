@@ -2,22 +2,13 @@ import mysql.connector as c
 import random
 from addHouses import *
 
-DB = c.connect(
-  host="localhost",
-  user="root",
-  password="password",
-  database='animal_crossing_team'
-)
+myPassword = input("Enter your MySQL password: ")
 
-# initialize SQL cursor to do statements on
-cur = DB.cursor()
-
-
-numVillagers = getNumVillagers(cur)
+numVillagers = getNumVillagers(myPassword)
 print(f"Number of villagers in the database: {numVillagers}")
 
-numHouses = inputRandomHouses(numVillagers)
+numHouses = inputRandomHouses(numVillagers, myPassword)
 
-inputRandomHousePayments(numVillagers, numHouses)
+inputRandomHousePayments(numVillagers, numHouses, myPassword)
 
-copyHouseIDtoVIllagers(numVillagers)
+copyHouseIDtoVIllagers(numVillagers, myPassword)

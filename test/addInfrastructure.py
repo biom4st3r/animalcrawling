@@ -4,7 +4,7 @@ import random
 DB = c.connect(
   host="localhost",
   user="root",
-  password="D@nnynguyen0389",
+  password="password",
   database='animal_crossing_team'
 )
 
@@ -18,3 +18,4 @@ Returns a number (should currently be 413)
 def getNumVillagers(cur):
     cur.execute("SELECT COUNT(v_id) FROM VILLAGER")
     return cur.fetchone()[0]
+
