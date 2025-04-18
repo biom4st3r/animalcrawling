@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `animal_crossing_team` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `animal_crossing_team`;
--- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: localhost    Database: animal_crossing_team
 -- ------------------------------------------------------
--- Server version	8.4.4
+-- Server version	8.0.39
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,7 +28,7 @@ CREATE TABLE `business` (
   `b_id` int NOT NULL AUTO_INCREMENT,
   `b_name` varchar(255) NOT NULL,
   PRIMARY KEY (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2509 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `business` (
 
 LOCK TABLES `business` WRITE;
 /*!40000 ALTER TABLE `business` DISABLE KEYS */;
+INSERT INTO `business` VALUES (2500,'Able Sisters'),(2501,'Crazy Redds'),(2502,'GracieGracie'),(2503,'Kicks'),(2504,'Nook n Go'),(2505,'Nooks Cranny'),(2506,'Nookway'),(2507,'Re-Tail'),(2508,'Tom Nooks Store');
 /*!40000 ALTER TABLE `business` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,7 +81,7 @@ CREATE TABLE `businesssales` (
   PRIMARY KEY (`bs_id`),
   KEY `b_id` (`b_id`),
   CONSTRAINT `businesssales_ibfk_1` FOREIGN KEY (`b_id`) REFERENCES `business` (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3509 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,6 +90,7 @@ CREATE TABLE `businesssales` (
 
 LOCK TABLES `businesssales` WRITE;
 /*!40000 ALTER TABLE `businesssales` DISABLE KEYS */;
+INSERT INTO `businesssales` VALUES (3500,2500,128450),(3501,2501,34820),(3502,2502,97200),(3503,2503,55310),(3504,2504,72150),(3505,2505,61990),(3506,2506,89430),(3507,2507,110270),(3508,2508,46580);
 /*!40000 ALTER TABLE `businesssales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,4 +368,5 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-07 21:14:20
+-- Dump completed on 2025-04-18 14:39:17
+
