@@ -1,0 +1,16 @@
+id, name, cost (bells),
+1, "Lamppost", 1000 
+2, "Park Bench", 1500
+3, "Bonfire", 80
+4, "Water Fountain", 3200
+5, "Campfire", 200
+6, "Campfire Cookware", 720
+7, "Director's Chair", 1200
+8, "Banana Statue", 7000
+9, "Fire Pit", 300
+10, "Froggy Chair", 9000
+11, "Golden Froggy Chair", 80000
+12, "Meiji Shrine", 500000
+13, "Stone Bridge", 300500
+14, "Log Bridge", 187500
+15, "Wooden Bridge", 204000
