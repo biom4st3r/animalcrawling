@@ -1,12 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `animal_crossing_team` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `animal_crossing_team`;
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
-
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: animal_crossing_team
+-- Host: localhost    Database: animal_crossing_team
 -- ------------------------------------------------------
-
--- Server version	8.0.39
+-- Server version	8.4.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +28,7 @@ CREATE TABLE `business` (
   `b_id` int NOT NULL AUTO_INCREMENT,
   `b_name` varchar(255) NOT NULL,
   PRIMARY KEY (`b_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2509 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2511 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +37,7 @@ CREATE TABLE `business` (
 
 LOCK TABLES `business` WRITE;
 /*!40000 ALTER TABLE `business` DISABLE KEYS */;
-INSERT INTO `business` VALUES (2500,'Able Sisters'),(2501,'Crazy Redds'),(2502,'GracieGracie'),(2503,'Kicks'),(2504,'Nook n Go'),(2505,'Nooks Cranny'),(2506,'Nookway'),(2507,'Re-Tail'),(2508,'Tom Nooks Store');
+INSERT INTO `business` VALUES (2500,'Able Sisters'),(2501,'Crazy Redds'),(2502,'GracieGracie'),(2503,'Kicks'),(2504,'Nook n Go'),(2505,'Nooks Cranny'),(2506,'Nookway'),(2507,'Re-Tail'),(2508,'Tom Nooks Store'),(2509,'The Roost'),(2510,'Happy Home Designer');
 /*!40000 ALTER TABLE `business` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +110,7 @@ CREATE TABLE `businessworkers` (
   KEY `vc_id` (`vc_id`),
   CONSTRAINT `businessworkers_ibfk_1` FOREIGN KEY (`b_id`) REFERENCES `business` (`b_id`),
   CONSTRAINT `businessworkers_ibfk_2` FOREIGN KEY (`vc_id`) REFERENCES `villagercareer` (`vc_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,6 +119,7 @@ CREATE TABLE `businessworkers` (
 
 LOCK TABLES `businessworkers` WRITE;
 /*!40000 ALTER TABLE `businessworkers` DISABLE KEYS */;
+INSERT INTO `businessworkers` VALUES (1,2500,35),(2,2500,36),(3,2500,37),(4,2500,38),(5,2500,39),(6,2501,58),(7,2501,59),(8,2502,60),(9,2502,61),(10,2503,62),(11,2504,63),(12,2504,64),(13,2505,65),(14,2505,66),(15,2506,67),(16,2506,68),(17,2507,69),(18,2507,70),(19,2508,71),(20,2508,72),(21,2509,44),(22,2510,78),(23,2510,79),(24,2510,80),(25,2510,81),(26,2510,82),(27,2510,83),(28,2510,84),(29,2510,85),(30,2510,86);
 /*!40000 ALTER TABLE `businessworkers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +135,7 @@ CREATE TABLE `career` (
   `c_title` varchar(50) DEFAULT NULL,
   `c_salary` float DEFAULT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,6 +144,7 @@ CREATE TABLE `career` (
 
 LOCK TABLES `career` WRITE;
 /*!40000 ALTER TABLE `career` DISABLE KEYS */;
+INSERT INTO `career` VALUES (1,'Lumberer',3600),(2,'Rock Breaker',20000),(3,'Seashell Collector',11000),(4,'Bug Collector',25000),(5,'Fashion Design',17500),(6,'Seamstress',5700),(7,'Fossil Collector',17500),(8,'Barista',10500),(9,'Fisher',30000),(10,'Sales Associate',9500),(11,'Museum Curator',13500),(12,'Doctor',1200),(13,'Home Designer',9000),(14,'Scubba Diver',40000),(15,'Slingshotter',60000);
 /*!40000 ALTER TABLE `career` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +303,7 @@ CREATE TABLE `villagercareer` (
   KEY `c_id` (`c_id`),
   CONSTRAINT `villagercareer_ibfk_1` FOREIGN KEY (`v_id`) REFERENCES `villager` (`v_id`),
   CONSTRAINT `villagercareer_ibfk_2` FOREIGN KEY (`c_id`) REFERENCES `career` (`c_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,6 +312,7 @@ CREATE TABLE `villagercareer` (
 
 LOCK TABLES `villagercareer` WRITE;
 /*!40000 ALTER TABLE `villagercareer` DISABLE KEYS */;
+INSERT INTO `villagercareer` VALUES (1,8,1),(2,190,1),(3,171,1),(4,130,1),(5,153,1),(6,236,1),(7,163,1),(8,411,1),(9,297,1),(10,258,1),(11,223,2),(12,70,2),(13,104,2),(14,24,2),(15,137,2),(16,192,2),(17,345,2),(18,148,3),(19,18,3),(20,360,3),(21,222,3),(22,197,3),(23,369,3),(24,49,3),(25,206,3),(26,311,3),(27,37,3),(28,66,3),(29,297,3),(30,59,4),(31,399,4),(32,327,4),(33,125,4),(34,396,4),(35,156,5),(36,77,5),(37,122,5),(38,181,6),(39,328,6),(40,295,7),(41,310,7),(42,206,7),(43,309,7),(44,388,8),(45,176,9),(46,332,9),(47,71,9),(48,398,9),(49,5,9),(50,239,9),(51,302,9),(52,314,9),(53,335,9),(54,368,9),(55,110,9),(56,209,9),(57,325,9),(58,337,10),(59,386,10),(60,206,10),(61,107,10),(62,213,10),(63,205,10),(64,40,10),(65,335,10),(66,64,10),(67,71,10),(68,295,10),(69,58,10),(70,254,10),(71,316,10),(72,321,10),(73,381,11),(74,368,12),(75,147,12),(76,392,12),(77,199,12),(78,310,13),(79,265,13),(80,379,13),(81,238,13),(82,350,13),(83,252,13),(84,199,13),(85,209,13),(86,371,13),(87,69,14),(88,226,14),(89,179,14),(90,324,14),(91,52,14),(92,2,14),(93,197,14),(94,143,14),(95,224,15),(96,323,15),(97,32,15);
 /*!40000 ALTER TABLE `villagercareer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,6 +373,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
--- Dump completed on 2025-04-18 14:39:17
-
+-- Dump completed on 2025-04-18 14:48:35
